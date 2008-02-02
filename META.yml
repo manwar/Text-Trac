@@ -1,0 +1,21 @@
+abstract: Perl extension for formatting text with Trac Wiki Style.
+author: Gosuke Miyashita, C<< <gosukenator at gmail.com> >>
+distribution_type: module
+generated_by: Module::Install version 0.63
+license: perl
+name: Text-Trac
+no_index: 
+  directory: 
+    - inc
+    - t
+  package: 
+    - TestMacro
+requires: 
+  Class::Accessor::Fast: 0
+  Class::Data::Inheritable: 0
+  HTML::Entities: 0
+  List::MoreUtils: 0
+  Test::Base: 0
+  Tie::IxHash: 0
+  UNIVERSAL::require: 0
+version: 0.08

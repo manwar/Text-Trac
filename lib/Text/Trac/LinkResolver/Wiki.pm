@@ -1,0 +1,24 @@
+package Text::Trac::LinkResolver::Wiki;
+
+use strict;
+use base qw( Text::Trac::LinkResolver );
+
+sub init {
+    my $self = shift;
+    $self->{pattern} = '!?(?<!/)\b[A-Z][a-z]+(?:[A-Z][a-z]*[a-z/])+(?:\#[A-Za-z0-9]+)?(?=\Z|\s|[.,;:!?\)\}\]])';
+}
+
+sub format_link {
+    my ( $self, $match, $target, $label ) = @_;
+    return $match if $self->_is_disabled;
+
+    my $c = $self->{context};
+    $label  ||= $match;
+    $target ||= $match;
+
+    my $url = $c->{trac_wiki_url} || $c->trac_url . "wiki/";
+    $url .= $target;
+    return sprintf '<a class="wiki" href="%s">%s</a>', $url, $label;
+}
+
+1;
