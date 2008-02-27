@@ -5,7 +5,8 @@ use base qw( Text::Trac::LinkResolver );
 
 sub init {
     my $self = shift;
-    $self->{pattern} = '!?(?<!/)\b[A-Z][a-z]+(?:[A-Z][a-z]*[a-z/])+(?:\#[A-Za-z0-9]+)?(?=\Z|\s|[.,;:!?\)\}\]])';
+    $self->{pattern} = '!?(?<!/)\b[A-Z][a-z]+(?:[A-Z][a-z]*[a-z/])+' .
+                       '(?:\#[A-Za-z_:][A-Za-z0-9_:.-]*)?(?=\Z|[\s.,;:!?\)\}\]])';
 }
 
 sub format_link {
@@ -16,7 +17,7 @@ sub format_link {
     $label  ||= $match;
     $target ||= $match;
 
-    if ( $label =~ /\[wiki:([^\s]+)\s+(.+)\]/ ) {
+    if ( $label =~ /\[wiki:(\S+)\s+(.+)\]/ ) {
         $target = $1;
         $label  = $2;
     }

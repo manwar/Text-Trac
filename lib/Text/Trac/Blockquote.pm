@@ -5,7 +5,7 @@ use base qw( Text::Trac::BlockNode );
 
 sub init {
     my $self = shift;
-    $self->pattern(qr/^\s+(?!\s|\*|\d\.|a\.|i\.|A\.|I\.).+$|^>/);
+    $self->pattern(qr/^(?:>|\s+(?![*\s]|[\daiAI]\.\ ).+$)/);
     $self->block_nodes([ qw( heading p ul ol ) ]);
 }
 
@@ -36,7 +36,7 @@ sub parse {
 
     $c->unshiftline;
     while( $c->hasnext ){
-        last if( $c->nextline =~ /^$/ or $c->nextline =~ /^\s+$/ );
+        last if( $c->nextline =~ /^\s*$/ );
         my $l = $c->shiftline;
 
         if ( $l =~ /^(>+).+/ ) {

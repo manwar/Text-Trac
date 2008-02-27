@@ -38,7 +38,7 @@ sub parse {
                 $l =~ s/^>+//;
             }
         }
-        elsif ( $l !~ /^>/ and $l !~ /^\s+/ and $blockquote_depth ) {
+        elsif ( $l !~ /^(?:>|\s+)/ and $blockquote_depth ) {
             $c->htmllines('</p>');
             pop @{$c->in_block_of};
             for ( 1.. $blockquote_depth ) {
