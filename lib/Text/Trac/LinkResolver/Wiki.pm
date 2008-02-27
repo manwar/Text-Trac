@@ -16,6 +16,11 @@ sub format_link {
     $label  ||= $match;
     $target ||= $match;
 
+    if ( $label =~ /\[wiki:([^\s]+)\s+(.+)\]/ ) {
+        $target = $1;
+        $label  = $2;
+    }
+
     my $url = $c->{trac_wiki_url} || $c->trac_url . "wiki/";
     $url .= $target;
     return sprintf '<a class="wiki" href="%s">%s</a>', $url, $label;

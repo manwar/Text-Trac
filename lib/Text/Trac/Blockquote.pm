@@ -5,7 +5,7 @@ use base qw( Text::Trac::BlockNode );
 
 sub init {
     my $self = shift;
-    $self->pattern(qr/^\s+([^\s\*\daiAI].+)$/);
+    $self->pattern(qr/^\s+(?!\s|\*|\d\.|a\.|i\.|A\.|I\.).+$|^>/);
     $self->block_nodes([ qw( heading p ul ol ) ]);
 }
 
@@ -15,13 +15,42 @@ sub parse {
     my $pattern = $self->pattern;
     return if $l =~ /::$/;
 
-    $c->htmllines('<blockquote>');
-    push @{$c->in_block_of}, 'blockquote';
+    if ( $l =~ /^(>+).+/ ) {
+        my $depth = length $1;
+        my $blockquote_depth = 0;
+        for ( @{$c->in_block_of} ) {
+            $blockquote_depth++ if $_ eq 'blockquote';
+        }
+
+        if ( $depth > $blockquote_depth ) {
+            for ( 1 .. $depth ) {
+                $c->htmllines('<blockquote class="citation">');
+                push @{$c->in_block_of}, 'blockquote';
+            }
+        }
+    }
+    else {
+        $c->htmllines('<blockquote>');
+        push @{$c->in_block_of}, 'blockquote';
+    }
 
     $c->unshiftline;
-    while($c->hasnext){
-        last if($c->nextline =~ /^$/);
+    while( $c->hasnext ){
+        last if( $c->nextline =~ /^$/ or $c->nextline =~ /^\s+$/ );
         my $l = $c->shiftline;
+
+        if ( $l =~ /^(>+).+/ ) {
+            my $depth = length $1;
+            my $blockquote_depth = 0;
+            for ( @{$c->in_block_of} ) {
+                $blockquote_depth++ if $_ eq 'blockquote';
+            }
+
+            if ( $depth < $blockquote_depth ) {
+                $c->unshiftline;
+                last;
+            }
+        }
 
         # parse other block nodes
         my $block_parsers = $self->_get_matched_parsers('block', $l);
@@ -38,8 +67,10 @@ sub parse {
         $c->htmllines($l);
     }
 
-    pop @{$c->in_block_of};
-    $c->htmllines('</blockquote>');
+    if ( @{$c->in_block_of} and $c->in_block_of->[-1] eq 'blockquote' ) {
+        pop @{$c->in_block_of};
+        $c->htmllines('</blockquote>');
+    }
 
     return $l;
 }

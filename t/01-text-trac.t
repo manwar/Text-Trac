@@ -140,13 +140,28 @@ test
 <ol class="loweralpha"><li>list a-1</li>
 <li>list a-2</li></ol></ol>
 
-### blockauote test
+### blockquote test
 --- input
   This text is a quote from someone else.
 --- expected
 <blockquote>
 <p>
   This text is a quote from someone else.
+</p>
+</blockquote>
+
+### blockquote2 test
+--- input
+  Ask not what your country can do for you. Ask what you can do for your country.
+  
+  --John F. Kennedy
+--- expected
+<blockquote>
+<p>
+  Ask not what your country can do for you. Ask what you can do for your country.
+</p>
+<p>
+  --John F. Kennedy
 </p>
 </blockquote>
 
@@ -175,7 +190,7 @@ test
 ### hr test
 --- input
 line1
-====
+----
 line2
 --- expected
 <p>
@@ -371,3 +386,42 @@ foo <strong>bar</strong> baz.
 foo &lt;bar&gt; baz.
 foo '''bar''' baz.
 </pre>
+
+### citation link
+--- input
+>> Someone's original text
+>> Someone's original text
+>> Someone's original text
+> Someone else's reply text
+> Someone else's reply text
+My reply text
+
+>> Someone's original text
+My reply text
+--- expected
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+ Someone's original text
+ Someone's original text
+ Someone's original text
+</p>
+</blockquote>
+<p>
+ Someone else's reply text
+ Someone else's reply text
+</p>
+</blockquote>
+<p>
+My reply text
+</p>
+<blockquote class="citation">
+<blockquote class="citation">
+<p>
+ Someone's original text
+</p>
+</blockquote>
+</blockquote>
+<p>
+My reply text
+</p>

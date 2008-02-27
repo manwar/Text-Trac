@@ -5,7 +5,7 @@ use base qw(Text::Trac::BlockNode);
 
 sub init {
     my $self = shift;
-    $self->pattern(qr/^====$/xms);
+    $self->pattern(qr/^----$/xms);
     return $self;
 }
 

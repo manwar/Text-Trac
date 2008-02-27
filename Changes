@@ -1,5 +1,10 @@
 Revision history for Text-Trac
 
+0.09    Thu Fev 28
+        Fix for http://rt.cpan.org/Ticket/Display.html?id=33575
+        and http://rt.cpan.org/Ticket/Display.html?id=33576.
+        Thanks for David Wheeler!
+
 0.08    Tue Nov 20
         Apply a patch of https://rt.cpan.org/Ticket/Display.html?id=30816.
         Thanks to Kazuyoshi KATO!
