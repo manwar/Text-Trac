@@ -264,6 +264,13 @@ TracLinks
 wiki:TracLinks
 </p>
 
+### wiki link test 5
+--- input
+[wiki:TracLinks Trac Links]
+--- expected
+<p>
+<a class="wiki" href="http://trac.mizzy.org/public/wiki/TracLinks">Trac Links</a>
+</p>
 
 ### milestone link test 1
 --- input
