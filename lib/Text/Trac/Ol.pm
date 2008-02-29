@@ -49,18 +49,21 @@ sub parse {
             $level--;
         }
     }
+    else {
+        $l = "</li>$l";
+    }
 
     $c->ol({level => $level, space => $space });
 
     # parse inline nodes
-    $l =~ s{ $pattern }{'<li>' . $self->replace($3) . '</li>'}xmsge;
+    $l =~ s{ $pattern }{'<li>' . $self->replace($3)}xmsge;
 
     if ($c->hasnext and $c->nextline =~ $pattern){
         $self->parse($l);
     }
     else {
         for ( 1 .. $c->ol->{level} ){
-            $l .= '</ol>';
+            $l .= '</li></ol>';
         }
         $c->ol->{level} = 0;
         $c->ol->{space} = 0;

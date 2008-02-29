@@ -10,7 +10,7 @@ __DATA__
 --- expected
 <h1 id="heading1">heading 1</h1>
 
-### h2 test
+### h2 test<
 --- input
 == heading 2 ==
 --- expected
@@ -123,10 +123,10 @@ test
    * list 2-1
    * list 2-2
 --- expected
-<ul><li>list 1-1</li>
-<li>list 1-2</li>
-<ul><li>list 2-1</li>
-<li>list 2-2</li></ul></ul>
+<ul><li>list 1-1
+</li><li>list 1-2
+<ul><li>list 2-1
+</li><li>list 2-2</li></ul></li></ul>
 
 ### ol test
 --- input
@@ -135,10 +135,10 @@ test
    a. list a-1
    a. list a-2
 --- expected
-<ol start="1"><li>list 1-1</li>
-<li>list 1-2</li>
-<ol class="loweralpha"><li>list a-1</li>
-<li>list a-2</li></ol></ol>
+<ol start="1"><li>list 1-1
+</li><li>list 1-2
+<ol class="loweralpha"><li>list a-1
+</li><li>list a-2</li></ol></li></ol>
 
 ### blockquote test
 --- input
@@ -252,10 +252,10 @@ http://mizzy.org/test.png
    * sublist with
    * two spaces
 --- expected
-<ul><li>indent with</li>
-<li>single space</li>
-<ul><li>sublist with</li>
-<li>two spaces</li></ul></ul>
+<ul><li>indent with
+</li><li>single space
+<ul><li>sublist with
+</li><li>two spaces</li></ul></li></ul>
 
 ### ul node with double space
 --- input
@@ -264,10 +264,10 @@ http://mizzy.org/test.png
     * sublist with
     * two spaces
 --- expected
-<ul><li>indent with</li>
-<li>two spaces</li>
-<ul><li>sublist with</li>
-<li>two spaces</li></ul></ul>
+<ul><li>indent with
+</li><li>two spaces
+<ul><li>sublist with
+</li><li>two spaces</li></ul></li></ul>
 
 ### ol node with single space
 --- input
@@ -276,10 +276,10 @@ http://mizzy.org/test.png
    a. sublist with
    a. two spaces
 --- expected
-<ol start="1"><li>indent with</li>
-<li>single space</li>
-<ol class="loweralpha"><li>sublist with</li>
-<li>two spaces</li></ol></ol>
+<ol start="1"><li>indent with
+</li><li>single space
+<ol class="loweralpha"><li>sublist with
+</li><li>two spaces</li></ol></li></ol>
 
 ### ol node with double space
 --- input
@@ -288,10 +288,10 @@ http://mizzy.org/test.png
     a. sublist with
     a. two spaces
 --- expected
-<ol start="1"><li>indent with</li>
-<li>two spaces</li>
-<ol class="loweralpha"><li>sublist with</li>
-<li>two spaces</li></ol></ol>
+<ol start="1"><li>indent with
+</li><li>two spaces
+<ol class="loweralpha"><li>sublist with
+</li><li>two spaces</li></ol></li></ol>
 
 ### dl node with single space
 --- input
@@ -375,10 +375,10 @@ foo '''bar''' baz.
 foo &lt;bar&gt; baz.
 foo <strong>bar</strong> baz.
 </p>
-<ul><li>foo &lt;bar&gt; bar.</li>
-<li>foo <strong>bar</strong> baz.</li></ul>
-<ol start="1"><li>foo &lt;bar&gt; bar.</li>
-<li>foo <strong>bar</strong> baz.</li></ol>
+<ul><li>foo &lt;bar&gt; bar.
+</li><li>foo <strong>bar</strong> baz.</li></ul>
+<ol start="1"><li>foo &lt;bar&gt; bar.
+</li><li>foo <strong>bar</strong> baz.</li></ol>
 <table>
 <tr><td>foo</td><td>&lt;bar&gt;</td><td><strong>baz</strong></td></tr>
 </table>
