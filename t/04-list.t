@@ -15,14 +15,14 @@ __DATA__
  * 7
  * 8
 --- expected
-<ul><li>1</li>
-<li>2</li>
-<ul><li>3</li>
-<li>4</li>
-<ul><li>5</li>
-<li>6</li>
-</ul></ul><li>7</li>
-<li>8</li></ul>
+<ul><li>1
+</li><li>2
+<ul><li>3
+</li><li>4
+<ul><li>5
+</li><li>6
+</li></ul></li></ul></li><li>7
+</li><li>8</li></ul>
 
 ### ul node another pattern 2
 --- input
@@ -35,14 +35,14 @@ __DATA__
   * 7
   * 8
 --- expected
-<ul><li>1</li>
-<li>2</li>
-<ul><li>3</li>
-<li>4</li>
-<ul><li>5</li>
-<li>6</li>
-</ul></ul><li>7</li>
-<li>8</li></ul>
+<ul><li>1
+</li><li>2
+<ul><li>3
+</li><li>4
+<ul><li>5
+</li><li>6
+</li></ul></li></ul></li><li>7
+</li><li>8</li></ul>
 
 ### ol node another pattern 1
 --- input
@@ -55,14 +55,14 @@ __DATA__
  a. 7
  a. 8
 --- expected
-<ol class="loweralpha"><li>1</li>
-<li>2</li>
-<ol class="loweralpha"><li>3</li>
-<li>4</li>
-<ol class="loweralpha"><li>5</li>
-<li>6</li>
-</ol></ol><li>7</li>
-<li>8</li></ol>
+<ol class="loweralpha"><li>1
+</li><li>2
+<ol class="loweralpha"><li>3
+</li><li>4
+<ol class="loweralpha"><li>5
+</li><li>6
+</li></ol></li></ol></li><li>7
+</li><li>8</li></ol>
 
 ### ol node another pattern 2
 --- input
@@ -75,14 +75,14 @@ __DATA__
   a. 7
   a. 8
 --- expected
-<ol class="loweralpha"><li>1</li>
-<li>2</li>
-<ol class="loweralpha"><li>3</li>
-<li>4</li>
-<ol class="loweralpha"><li>5</li>
-<li>6</li>
-</ol></ol><li>7</li>
-<li>8</li></ol>
+<ol class="loweralpha"><li>1
+</li><li>2
+<ol class="loweralpha"><li>3
+</li><li>4
+<ol class="loweralpha"><li>5
+</li><li>6
+</li></ol></li></ol></li><li>7
+</li><li>8</li></ol>
 
 ### 2 set of ul nodes
 --- input
@@ -94,12 +94,12 @@ __DATA__
  * list 2-2
  * list 2-3
 --- expected
-<ul><li>list 1-1</li>
-<li>list 1-2</li>
-<li>list 1-3</li></ul>
-<ul><li>list 2-1</li>
-<li>list 2-2</li>
-<li>list 2-3</li></ul>
+<ul><li>list 1-1
+</li><li>list 1-2
+</li><li>list 1-3</li></ul>
+<ul><li>list 2-1
+</li><li>list 2-2
+</li><li>list 2-3</li></ul>
 
 ### 2 set of ol nodes
 --- input
@@ -111,9 +111,9 @@ __DATA__
  a. list 2-2
  a. list 2-3
 --- expected
-<ol class="loweralpha"><li>list 1-1</li>
-<li>list 1-2</li>
-<li>list 1-3</li></ol>
-<ol class="loweralpha"><li>list 2-1</li>
-<li>list 2-2</li>
-<li>list 2-3</li></ol>
+<ol class="loweralpha"><li>list 1-1
+</li><li>list 1-2
+</li><li>list 1-3</li></ol>
+<ol class="loweralpha"><li>list 2-1
+</li><li>list 2-2
+</li><li>list 2-3</li></ol>

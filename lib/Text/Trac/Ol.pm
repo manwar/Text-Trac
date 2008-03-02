@@ -45,9 +45,13 @@ sub parse {
     }
     elsif ( $space < $c->ol->{space} ){
         for ( 1 .. ( $c->ol->{space} - $space ) / 2 ) {
-            $l = '</ol>' . $l;
+            $l = '</li></ol>' . $l;
             $level--;
         }
+        for ( 2 .. ( $c->ol->{space} - $space ) / 2 ) {
+            $l =~ s!(</ol>|</li>) !$1</li> !;
+        }
+
     }
     else {
         $l = "</li>$l";

@@ -1,5 +1,4 @@
 package Text::Trac::Ul;
-
 use strict;
 use base qw(Text::Trac::BlockNode);
 
@@ -26,8 +25,11 @@ sub parse {
     }
     elsif ( $space < $c->ul->{space} ) {
         for ( 1 .. ( $c->ul->{space} - $space ) / 2 ) {
-            $l = '</ul>' . $l;
+            $l = '</li></ul>' . $l;
             $level--;
+        }
+        for ( 2 .. ( $c->ul->{space} - $space ) / 2 ) {
+            $l =~ s!(</ul>|</li>) !$1</li> !;
         }
     }
     else {
@@ -37,7 +39,9 @@ sub parse {
     $c->ul({ level => $level, space => $space });
 
     # parse inline nodes
-    $l =~ s{ $pattern }{"<li>" . $self->replace($2)}xmsge;
+    if ( $l =~ /$pattern/ ) {
+        $l =~ s{ $pattern }{"<li>" . $self->replace($2)}xmsge;
+    }
 
     if ( $c->hasnext and $c->nextline =~ /$pattern/ ){
         $self->parse($l);
