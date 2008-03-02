@@ -49,7 +49,7 @@ sub parse {
             $level--;
         }
         for ( 2 .. ( $c->ol->{space} - $space ) / 2 ) {
-            $l =~ s!(</ol>|</li>) !$1</li> !;
+            $l =~ s!(?<=</(?:ol|li)>)(?= )!</li>!;
         }
 
     }

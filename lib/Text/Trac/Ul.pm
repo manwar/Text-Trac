@@ -30,7 +30,7 @@ sub parse {
             $level--;
         }
         for ( 2 .. ( $c->ul->{space} - $space ) / 2 ) {
-            $l =~ s!(</ul>|</li>) !$1</li> !;
+            $l =~ s!(?<=</(?:ul|li)>)(?= )!</li>!;
         }
     }
     else {
@@ -40,7 +40,7 @@ sub parse {
     $c->ul({ level => $level, space => $space });
 
     # parse inline nodes
-    $l =~ s{ $pattern }{"<li>" . $self->replace($2)}xmsge; 
+    $l =~ s{ $pattern }{"<li>" . $self->replace($2)}xmsge;
 
     if ( $c->hasnext and $c->nextline =~ /$pattern/ ){
         $self->parse($l);

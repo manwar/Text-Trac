@@ -41,7 +41,7 @@ my $lhref = "!?\\[
              \\]
              ";
 
-my $img_re = qr/\.(gif|jpg|jpeg|png)(\?.*)?$/i;
+my $img_re = qr/\.(?:gif|jpe?g|png)(?:\?.*)?$/i;
 
 
 my $rules = join '|', ( map { "($_)" } ( keys %token_table ) );
