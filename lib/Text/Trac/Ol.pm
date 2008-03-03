@@ -48,10 +48,7 @@ sub parse {
             $l = '</li></ol>' . $l;
             $level--;
         }
-        for ( 2 .. ( $c->ol->{space} - $space ) / 2 ) {
-            $l =~ s!(?<=</(?:ol|li)>)(?= )!</li>!;
-        }
-
+        $l =~ s!(?<=</(?:ol|li)>)(?= )!</li>!;
     }
     else {
         $l = "</li>$l";

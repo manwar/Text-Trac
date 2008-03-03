@@ -117,3 +117,39 @@ __DATA__
 <ol class="loweralpha"><li>list 2-1
 </li><li>list 2-2
 </li><li>list 2-3</li></ol>
+
+### SVN::Notify set example set.
+--- input
+ * Item 1
+   * Item 1.1
+      * Item 1.1.1
+      * Item 1.1.2
+      * Item 1.1.3
+   * Item 1.2
+ * Item 2
+--- expected
+<ul><li>Item 1
+<ul><li>Item 1.1
+<ul><li>Item 1.1.1
+</li><li>Item 1.1.2
+</li><li>Item 1.1.3
+</li></ul></li><li>Item 1.2
+</li></ul></li><li>Item 2</li></ul>
+
+### SVN::Notify set example set.(ol)
+--- input
+ a. Item 1
+   a. Item 1.1
+      a. Item 1.1.1
+      a. Item 1.1.2
+      a. Item 1.1.3
+   a. Item 1.2
+ a. Item 2
+--- expected
+<ol class="loweralpha"><li>Item 1
+<ol class="loweralpha"><li>Item 1.1
+<ol class="loweralpha"><li>Item 1.1.1
+</li><li>Item 1.1.2
+</li><li>Item 1.1.3
+</li></ol></li><li>Item 1.2
+</li></ol></li><li>Item 2</li></ol>
