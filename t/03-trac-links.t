@@ -439,3 +439,9 @@ source:trunk/COPYING#200
 <p>
 [source:trunk/COPYING]
 </p>
+
+### escaping links and wiki page names
+--- input
+== EscapingLinksand!WikiPageNames ==
+--- expected
+<h2 id="EscapingLinksandWikiPageNames"><a class="wiki" href="http://trac.mizzy.org/public/wiki/EscapingLinksand">EscapingLinksand</a>WikiPageNames</h2>

@@ -22,7 +22,7 @@ sub parse {
 
 sub _strip {
   my ( $self, $word ) = @_;
-  $word =~ s/[\s,_`'{}]//g;
+  $word =~ s/[\s,_`'{}!]//g;
   return $word;
 }
 

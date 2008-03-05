@@ -153,3 +153,11 @@ __DATA__
 </li><li>Item 1.1.3
 </li></ol></li><li>Item 1.2
 </li></ol></li><li>Item 2</li></ol>
+
+### ol start with 2
+--- input
+ 2. Item 1
+ 2. Item 2
+--- expected
+<ol start="2"><li>Item 1
+</li><li>Item 2</li></ol>

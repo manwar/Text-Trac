@@ -22,7 +22,7 @@ sub parse {
 
     my $start_tag;
     if ($type =~ /(\d)/){
-        $start_tag = qq{<ol start="$1">};
+        $start_tag = $type == 1 ? '<ol>' : qq{<ol start="$1">};
     }
     elsif ($type eq 'a'){
         $start_tag = qq{<ol class="loweralpha">};

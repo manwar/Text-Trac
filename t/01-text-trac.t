@@ -135,7 +135,7 @@ test
    a. list a-1
    a. list a-2
 --- expected
-<ol start="1"><li>list 1-1
+<ol><li>list 1-1
 </li><li>list 1-2
 <ol class="loweralpha"><li>list a-1
 </li><li>list a-2</li></ol></li></ol>
@@ -276,7 +276,7 @@ http://mizzy.org/test.png
    a. sublist with
    a. two spaces
 --- expected
-<ol start="1"><li>indent with
+<ol><li>indent with
 </li><li>single space
 <ol class="loweralpha"><li>sublist with
 </li><li>two spaces</li></ol></li></ol>
@@ -288,7 +288,7 @@ http://mizzy.org/test.png
     a. sublist with
     a. two spaces
 --- expected
-<ol start="1"><li>indent with
+<ol><li>indent with
 </li><li>two spaces
 <ol class="loweralpha"><li>sublist with
 </li><li>two spaces</li></ol></li></ol>
@@ -377,7 +377,7 @@ foo <strong>bar</strong> baz.
 </p>
 <ul><li>foo &lt;bar&gt; bar.
 </li><li>foo <strong>bar</strong> baz.</li></ul>
-<ol start="1"><li>foo &lt;bar&gt; bar.
+<ol><li>foo &lt;bar&gt; bar.
 </li><li>foo <strong>bar</strong> baz.</li></ol>
 <table>
 <tr><td>foo</td><td>&lt;bar&gt;</td><td><strong>baz</strong></td></tr>
