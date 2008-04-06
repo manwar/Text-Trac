@@ -5,7 +5,7 @@ use base qw( Text::Trac::BlockNode );
 
 sub init {
     my $self = shift;
-    $self->pattern(qr/^(?:>|\s+(?![*\s]|[\daiAI]\.\s+).+$)/);
+    $self->pattern(qr/^(?:>|\s+(?![*\s]|[\daiAI]\.\ +).+$)/);
     $self->block_nodes([ qw( heading p ul ol ) ]);
 }
 
