@@ -445,3 +445,11 @@ source:trunk/COPYING#200
 == EscapingLinksand!WikiPageNames ==
 --- expected
 <h2 id="EscapingLinksandWikiPageNames"><a class="wiki" href="http://trac.mizzy.org/public/wiki/EscapingLinksand">EscapingLinksand</a>WikiPageNames</h2>
+
+### comment link test 1
+--- input
+comment:ticket:1:8
+--- expected
+<p>
+<a class="ticket" href="http://trac.mizzy.org/public/ticket/1#comment:8">comment:ticket:1:8</a>
+</p>

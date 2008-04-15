@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use List::MoreUtils qw( any );
 
-our @handlers = qw( changeset wiki report log ticket milestone source attachment);
+our @handlers = qw( changeset wiki report log ticket milestone source attachment comment );
 
 sub new {
     my $class = shift;

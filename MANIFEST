@@ -21,6 +21,7 @@ lib/Text/Trac/InlineNode.pm
 lib/Text/Trac/LinkResolver.pm
 lib/Text/Trac/LinkResolver/Attachment.pm
 lib/Text/Trac/LinkResolver/Changeset.pm
+lib/Text/Trac/LinkResolver/Comment.pm
 lib/Text/Trac/LinkResolver/Log.pm
 lib/Text/Trac/LinkResolver/Milestone.pm
 lib/Text/Trac/LinkResolver/Report.pm
