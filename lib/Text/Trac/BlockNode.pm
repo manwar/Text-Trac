@@ -17,9 +17,9 @@ __PACKAGE__->mk_classdata(
     block_parsers  => []
 );
 
-#__PACKAGE__->mk_classdata(
-#    inline_parsers => []
-#);
+__PACKAGE__->mk_classdata(
+    inline_parsers => []
+);
 
 __PACKAGE__->mk_accessors( qw( context pattern inline_parser ) );
 

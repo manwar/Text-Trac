@@ -1,5 +1,9 @@
 Revision history for Text-Trac
 
+0.13	Tue Jul 29
+	Revert inline_parsers in Text::Trac::BlockNode.
+        Thanks for yappo!
+
 0.12    Tue Apr 15
         Support comment link.
         See http://rt.cpan.org/Ticket/Display.html?id=34805.
