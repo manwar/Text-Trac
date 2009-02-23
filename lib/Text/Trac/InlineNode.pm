@@ -41,9 +41,6 @@ my $lhref = "!?\\[
              \\]
              ";
 
-my $img_re = qr/\.(?:gif|jpe?g|png)(?:\?.*)?$/i;
-
-
 my $rules = join '|', ( map { "($_)" } ( keys %token_table ) );
 $rules = qr/$rules/x;
 
@@ -289,9 +286,6 @@ sub _make_ext_link {
     my $title_attr = $title ? qq{title="$title"} : '';
 
     $title ||= $text;
-    if ( $url =~ $img_re ) {
-        return qq{<img src="$url" alt="$title" />};
-    }
 
     my $local = $self->{context}->{local} || '';
     if ( $url !~ /^$local/ or !$local ) {

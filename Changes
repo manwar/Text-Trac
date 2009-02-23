@@ -1,5 +1,9 @@
 Revision history for Text-Trac
 
+0.14    Mon 23 Feb
+        Fix for RT#43337.Image URLs are not converted into
+        embedded images anymore.Thanks for cmcosse!
+
 0.13	Tue Jul 29
 	Revert inline_parsers in Text::Trac::BlockNode.
         Thanks for yappo!

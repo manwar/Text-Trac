@@ -241,8 +241,8 @@ http://mizzy.org/test.png
 [http://mizzy.org/test.png Image]
 --- expected
 <p>
-<img src="http://mizzy.org/test.png" alt="http://mizzy.org/test.png" />
-<img src="http://mizzy.org/test.png" alt="Image" />
+<a class="ext-link" href="http://mizzy.org/test.png"><span class="icon"></span>http://mizzy.org/test.png</a>
+<a class="ext-link" href="http://mizzy.org/test.png"><span class="icon"></span>Image</a>
 </p>
 
 ### ul node with single space
