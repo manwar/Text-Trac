@@ -1,6 +1,10 @@
 Revision history for Text-Trac
 
-0.14    Mon 23 Feb
+0.15    Sun Mar 8
+        Fix for RT#43894.Updated Module::Install in this module.
+        Thanks for ANDK!
+
+0.14    Mon Feb 23
         Fix for RT#43337.Image URLs are not converted into
         embedded images anymore.Thanks for cmcosse!
 
