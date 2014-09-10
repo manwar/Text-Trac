@@ -16,4 +16,6 @@ no_index( package => 'TestMacro' );
 auto_include;
 auto_install;
 
+repository 'https://github.com/mizzy/Text-Trac';
+
 WriteAll;
