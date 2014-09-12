@@ -425,3 +425,10 @@ My reply text
 <p>
 My reply text
 </p>
+
+### Image
+--- input
+[[Image(cool_diff_box.png)]]
+--- expected
+<img src="cool_diff_box.png" />
+
