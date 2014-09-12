@@ -436,3 +436,8 @@ My reply text
   <li>Second</li>
 </ul>
 
+### Image
+--- input
+[[Image(cool_diff_box.png)]]
+--- expected
+<img src="cool_diff_box.png" />
