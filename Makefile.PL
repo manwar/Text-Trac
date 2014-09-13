@@ -2,6 +2,7 @@ use inc::Module::Install;
 
 name('Text-Trac');
 all_from('lib/Text/Trac.pm');
+license 'perl';
 
 requires('Test::Base');
 requires('UNIVERSAL::require');
@@ -16,6 +17,6 @@ no_index( package => 'TestMacro' );
 auto_include;
 auto_install;
 
-repository 'https://github.com/mizzy/Text-Trac';
+repository 'https://github.com/szabgab/Text-Trac';
 
 WriteAll;

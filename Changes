@@ -1,5 +1,10 @@
 Revision history for Text-Trac
 
+0.16 2014.09.13
+    New maintainer.
+    Link to Github.
+    License in META files.
+
 0.15    Sun Mar 8
         Fix for RT#43894.Updated Module::Install in this module.
         Thanks for ANDK!
