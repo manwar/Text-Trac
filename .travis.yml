@@ -9,3 +9,9 @@ perl:
   - "5.14"
   - "5.12"
   - "5.10"
+
+before_install:
+  - cpanm --notest Test::Version
+  - cpanm --notest Test::Pod::Coverage
+  - cpanm --notest Test::Pod
+
