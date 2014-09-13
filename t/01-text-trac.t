@@ -426,18 +426,18 @@ My reply text
 My reply text
 </p>
 
-### List item
---- input
-* First
-* Second
---- expected
-<ul>
-  <li>First</li>
-  <li>Second</li>
-</ul>
-
-### Image
---- input
-[[Image(cool_diff_box.png)]]
---- expected
-<img src="cool_diff_box.png" />
+#### List item
+#--- input
+#* First
+#* Second
+#--- expected
+#<ul>
+#  <li>First</li>
+#  <li>Second</li>
+#</ul>
+#
+#### Image
+#--- input
+#[[Image(cool_diff_box.png)]]
+#--- expected
+#<img src="cool_diff_box.png" />
