@@ -3,6 +3,8 @@ package Text::Trac::LinkResolver::Changeset;
 use strict;
 use base qw( Text::Trac::LinkResolver );
 
+our $VERSION = '0.16';
+
 sub init {
     my $self = shift;
     $self->{pattern} = '!?\[\d+\]|(?:\b|!)r\d+\b(?!:\d)';

@@ -3,6 +3,8 @@ package Text::Trac::LinkResolver::Wiki;
 use strict;
 use base qw( Text::Trac::LinkResolver );
 
+our $VERSION = '0.16';
+
 sub init {
     my $self = shift;
     $self->{pattern} = '!?(?<!/)\b[A-Z][a-z]+(?:[A-Z][a-z]*[a-z/])+' .

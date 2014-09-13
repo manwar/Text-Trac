@@ -3,6 +3,8 @@ package Text::Trac::LinkResolver::Source;
 use strict;
 use base qw( Text::Trac::LinkResolver );
 
+our $VERSION = '0.16';
+
 sub init {
     my $self = shift;
 }

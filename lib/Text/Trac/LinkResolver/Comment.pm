@@ -3,6 +3,8 @@ package Text::Trac::LinkResolver::Comment;
 use strict;
 use base qw( Text::Trac::LinkResolver );
 
+our $VERSION = '0.16';
+
 sub init {
     my $self = shift;
     $self->{pattern} = '!?(?<!&)comment:ticket:\d+:\d+';
