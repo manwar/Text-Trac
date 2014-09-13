@@ -7,6 +7,8 @@ use UNIVERSAL::require;
 use Text::Trac::LinkResolver;
 use HTML::Entities qw();
 
+our $VERSION = '0.16';
+
 tie my %token_table, 'Tie::IxHash';
 
 #my $handler = $token_table{'!?\\[\\d+\\]|(?:\\b|!)r\\d+\\b(?!:\\d)'};

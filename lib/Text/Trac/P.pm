@@ -3,6 +3,8 @@ use strict;
 use base qw(Text::Trac::BlockNode);
 use Text::Trac::Text;
 
+our $VERSION = '0.16';
+
 sub parse {
     my ( $self, $l ) = @_;
     my $c = $self->{context};

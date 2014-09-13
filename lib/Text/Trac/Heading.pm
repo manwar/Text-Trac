@@ -2,6 +2,8 @@ package Text::Trac::Heading;
 use strict;
 use base qw(Text::Trac::BlockNode);
 
+our $VERSION = '0.16';
+
 sub init {
     my $self = shift;
     $self->pattern(qr/^(=+) \s (.*) \s (=+)$/xms);

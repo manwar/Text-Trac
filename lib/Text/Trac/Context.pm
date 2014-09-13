@@ -2,6 +2,8 @@ package Text::Trac::Context;
 use strict;
 use base qw (Class::Accessor::Fast);
 
+our $VERSION = '0.16';
+
 __PACKAGE__->mk_accessors( qw( ul ol min_heading_level permalink in_block_of trac_url ) );
 
 my %Defaults = (

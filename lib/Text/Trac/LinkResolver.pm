@@ -4,6 +4,8 @@ use strict;
 use warnings;
 use List::MoreUtils qw( any );
 
+our $VERSION = '0.16';
+
 our @handlers = qw( changeset wiki report log ticket milestone source attachment comment );
 
 sub new {

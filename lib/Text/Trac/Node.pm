@@ -2,6 +2,8 @@ package Text::Trac::Node;
 use strict;
 use base qw( Class::Accessor::Fast );
 
+our $VERSION = '0.16';
+
 sub init {
     my $self = shift;
     $self->{pattern} = '';

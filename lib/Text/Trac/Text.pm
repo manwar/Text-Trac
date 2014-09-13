@@ -1,6 +1,8 @@
 package Text::Trac::Text;
 use strict;
 
+our $VERSION = '0.16';
+
 sub new {
     my $class = shift;
     my %args = @_;
