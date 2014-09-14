@@ -59,10 +59,6 @@ __END__
 
 Text::Trac - Perl extension for formatting text with Trac Wiki Style.
 
-=head1 VERSION
-
-Version 0.12
-
 =head1 SYNOPSIS
 
     use Text::Trac;
