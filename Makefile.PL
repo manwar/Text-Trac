@@ -11,6 +11,7 @@ requires('Class::Data::Inheritable');
 requires('Tie::IxHash');
 requires('List::MoreUtils');
 requires('HTML::Entities');
+requires('Path::Tiny');
 
 no_index( package => 'TestMacro' );
 
