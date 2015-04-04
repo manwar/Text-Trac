@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 3;
+use Test::More tests => 2;
 
 sub not_in_file_ok {
 	my ( $filename, %regex ) = @_;
@@ -27,11 +27,6 @@ sub not_in_file_ok {
 		pass("$filename contains no boilerplate text");
 	}
 }
-
-not_in_file_ok(
-	README                       => "The README is used..." => qr/The README is used/,
-	"'version information here'" => qr/to provide version information/,
-);
 
 not_in_file_ok( Changes => "placeholder date/time" => qr(Date/time) );
 
