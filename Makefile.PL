@@ -4,7 +4,10 @@ name('Text-Trac');
 all_from('lib/Text/Trac.pm');
 license 'perl';
 
-requires('Test::Base');
+test_requires('Test::Base');
+test_requires('Test::More');
+test_requires('Test::Differences');
+
 requires('UNIVERSAL::require');
 requires('Class::Accessor::Fast');
 requires('Class::Data::Inheritable');
