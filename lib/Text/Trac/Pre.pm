@@ -8,7 +8,7 @@ our $VERSION = '0.16';
 
 sub init {
 	my $self = shift;
-	$self->pattern(qr/^{{{$/xms);
+	$self->pattern(qr/^\{\{\{$/xms);
 	return $self;
 }
 
@@ -19,13 +19,13 @@ sub parse {
 	$l =~ /$pattern/ or return $l;
 	my $match = $1;
 
-	if ( $l =~ /^{{{$/ ) {
+	if ( $l =~ /^\{\{\{$/ ) {
 		$c->htmllines('<pre class="wiki">');
 	}
 
 	while ( $c->hasnext ) {
 		my $l = $c->shiftline;
-		if ( $l =~ /^}}}$/ ) {
+		if ( $l =~ /^\}\}\}$/ ) {
 			$c->htmllines('</pre>');
 			last;
 		}
