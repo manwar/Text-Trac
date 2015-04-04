@@ -6,35 +6,36 @@ use base qw(Text::Trac::BlockNode);
 our $VERSION = '0.16';
 
 sub init {
-    my $self = shift;
-    $self->pattern(qr/^\|\|([^\|]*\|\|(?:[^\|]*\|\|)+)$/xms);
-    return $self;
+	my $self = shift;
+	$self->pattern(qr/^\|\|([^\|]*\|\|(?:[^\|]*\|\|)+)$/xms);
+	return $self;
 }
 
 sub parse {
-    my ( $self, $l ) = @_;
-    my $c = $self->{context};
-    my $pattern = $self->pattern;
-    $l =~ $pattern or return $l;
+	my ( $self, $l ) = @_;
+	my $c       = $self->{context};
+	my $pattern = $self->pattern;
+	$l =~ $pattern or return $l;
 
-    $c->htmllines('<table>');
+	$c->htmllines('<table>');
 
-    $c->unshiftline;
-    while( $c->hasnext and ($c->nextline =~ $pattern ) ){
-        my $l = $c->shiftline;
-        $l =~ s{ $self->{pattern} }{$1}xmsg;
-        $l = "<tr><td>" . join( "</td><td>",
-                                map {
-                                  $self->replace($_) # parse inline nodes
-                                } split(/\|\|/, $l) ) . "</td></tr>";
+	$c->unshiftline;
+	while ( $c->hasnext and ( $c->nextline =~ $pattern ) ) {
+		my $l = $c->shiftline;
+		$l =~ s{ $self->{pattern} }{$1}xmsg;
+		$l = "<tr><td>" . join(
+			"</td><td>",
+			map {
+				$self->replace($_)    # parse inline nodes
+			} split( /\|\|/, $l )
+		) . "</td></tr>";
 
-        $c->htmllines($l);
-    }
+		$c->htmllines($l);
+	}
 
-    $c->htmllines('</table>');
+	$c->htmllines('</table>');
 
-    return;
+	return;
 }
-
 
 1;

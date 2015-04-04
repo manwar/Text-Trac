@@ -8,12 +8,12 @@ delimiters('###');
 
 plan tests => 1 * blocks;
 
-my $p = Text::Trac->new( disable_links => [ qw( log milestone ) ] );
+my $p = Text::Trac->new( disable_links => [qw( log milestone )] );
 
 sub parse {
-    local $_ = shift;
-    $p->parse($_);
-    $p->html;
+	local $_ = shift;
+	$p->parse($_);
+	$p->html;
 }
 
 filters { input => 'parse', expected => 'chomp' };

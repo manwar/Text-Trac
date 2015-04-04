@@ -6,20 +6,20 @@ use base qw(Text::Trac::BlockNode);
 our $VERSION = '0.16';
 
 sub init {
-    my $self = shift;
-    $self->pattern(qr/^----$/xms);
-    return $self;
+	my $self = shift;
+	$self->pattern(qr/^----$/xms);
+	return $self;
 }
 
 sub parse {
-    my ( $self, $l ) = @_;
-    my $c = $self->context;
-    my $pattern = $self->pattern;
-    $l =~ $pattern or return;
+	my ( $self, $l ) = @_;
+	my $c       = $self->context;
+	my $pattern = $self->pattern;
+	$l =~ $pattern or return;
 
-    $l =~ s{ $pattern }{<hr />}xmsg;
+	$l =~ s{ $pattern }{<hr />}xmsg;
 
-    $c->htmllines($l);
+	$c->htmllines($l);
 }
 
 1;

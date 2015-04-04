@@ -9,20 +9,20 @@ delimiters('###');
 plan tests => 1 * blocks;
 
 my $p = Text::Trac->new(
-    trac_attachment_url => 'http://mizzy.org/attachment',
-    trac_changeset_url  => 'http://mizzy.org/changeset',
-    trac_log_url        => 'http://mizzy.org/log',
-    trac_milestone_url  => 'http://mizzy.org/milestone',
-    trac_report_url     => 'http://mizzy.org/report',
-    trac_source_url     => 'http://mizzy.org/source',
-    trac_ticket_url     => 'http://mizzy.org/ticket',
-    trac_wiki_url       => 'http://mizzy.org/wiki',
+	trac_attachment_url => 'http://mizzy.org/attachment',
+	trac_changeset_url  => 'http://mizzy.org/changeset',
+	trac_log_url        => 'http://mizzy.org/log',
+	trac_milestone_url  => 'http://mizzy.org/milestone',
+	trac_report_url     => 'http://mizzy.org/report',
+	trac_source_url     => 'http://mizzy.org/source',
+	trac_ticket_url     => 'http://mizzy.org/ticket',
+	trac_wiki_url       => 'http://mizzy.org/wiki',
 );
 
 sub parse {
-    local $_ = shift;
-    $p->parse($_);
-    $p->html;
+	local $_ = shift;
+	$p->parse($_);
+	$p->html;
 }
 
 filters { input => 'parse', expected => 'chomp' };

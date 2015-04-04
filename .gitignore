@@ -1,9 +1,10 @@
+*.swp
+.tidyall.d/
 MANIFEST
 META.*
 MYMETA.*
 Makefile
+Text-Trac-*
 blib/
 cover_db/
 pm_to_blib
-*.swp
-Text-Trac-*

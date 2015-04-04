@@ -8,44 +8,44 @@ use Text::Trac::BlockNode;
 our $VERSION = '0.16';
 
 my %Defaults = (
-    html              => '',
-    permalink         => '',
-    min_heading_level => 1,
+	html              => '',
+	permalink         => '',
+	min_heading_level => 1,
 );
 
 sub new {
-    my ( $class, %args ) = @_;
+	my ( $class, %args ) = @_;
 
-    my $self = {
-        %Defaults,
-        %args,
-    };
+	my $self = { %Defaults, %args, };
 
-    bless $self, $class;
+	bless $self, $class;
 }
 
 sub parse {
-    my $self = shift;
-    my $text = shift or return;
+	my $self = shift;
+	my $text = shift or return;
 
-    $self->{trac_url} = '/' unless defined $self->{trac_url};
-    for ( keys %$self ) {
-        if ( $_ =~ /^trac.+url$/ ) {
-            $self->{$_} .= '/' if $self->{$_} !~ m!/$!;
-        }
-    }
+	$self->{trac_url} = '/' unless defined $self->{trac_url};
+	for ( keys %$self ) {
+		if ( $_ =~ /^trac.+url$/ ) {
+			$self->{$_} .= '/' if $self->{$_} !~ m!/$!;
+		}
+	}
 
-    my $c = Text::Trac::Context->new({
-        %$self,
-        text => $text,
-    });
+	my $c = Text::Trac::Context->new(
+		{
+			%$self, text => $text,
+		}
+	);
 
-    my $node = Text::Trac::BlockNode->new({
-        context  => $c,
-    });
-    $node->parse;
+	my $node = Text::Trac::BlockNode->new(
+		{
+			context => $c,
+		}
+	);
+	$node->parse;
 
-    $self->{html} = $c->html;
+	$self->{html} = $c->html;
 }
 
 sub html { $_[0]->{html}; }
