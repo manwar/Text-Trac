@@ -1,5 +1,7 @@
+#!/usr/bin/env perl
 use strict;
 use warnings;
+
 use Text::Trac ();
 use Getopt::Long qw(GetOptions);
 use Path::Tiny qw(path);

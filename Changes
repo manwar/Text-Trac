@@ -1,6 +1,6 @@
 Revision history for Text-Trac
 
-    Add command line script script/trac2html.pl
+    Add command line script script/trac2html
     run Perl::Tidy
     run Perl::Critic
     Escape { in regex RT #100712

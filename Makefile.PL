@@ -6,7 +6,8 @@ license 'perl';
 
 test_requires('Test::Base');
 test_requires('Test::More');
-test_requires('Test::Differences');
+
+#test_requires('Test::Differences');
 
 requires('UNIVERSAL::require');
 requires('Class::Accessor::Fast');
@@ -17,6 +18,8 @@ requires('HTML::Entities');
 requires('Path::Tiny');
 
 no_index( package => 'TestMacro' );
+
+install_script 'script/trac2html';
 
 auto_include;
 auto_install;
