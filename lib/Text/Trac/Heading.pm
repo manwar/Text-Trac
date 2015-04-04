@@ -1,5 +1,6 @@
 package Text::Trac::Heading;
 use strict;
+use warnings;
 use base qw(Text::Trac::BlockNode);
 
 our $VERSION = '0.16';

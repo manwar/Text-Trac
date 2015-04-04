@@ -7,7 +7,7 @@ our $VERSION = '0.16';
 
 sub process {
 	my ( $class, $c, @args ) = @_;
-	return "Hello World, args = " . join ', ', @args;
+	return 'Hello World, args = ' . join ', ', @args;
 }
 
 1;

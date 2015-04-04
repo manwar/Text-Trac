@@ -1,6 +1,7 @@
 package Text::Trac::InlineNode;
 
 use strict;
+use warnings;
 use Tie::IxHash;
 use Text::Trac::Macro;
 use UNIVERSAL::require;
@@ -46,8 +47,8 @@ my $lhref                 = "!?\\[
 my $rules = join '|', ( map {"($_)"} ( keys %token_table ) );
 $rules = qr/$rules/x;
 
-map { $_ =~ s/^\!\?// } ( values %token_table );
-map { $_ =~ s/^\\// }   ( values %token_table );
+s/^\!\?// for values %token_table;
+s/^\\//   for values %token_table;
 
 sub new {
 	my ( $class, $c ) = @_;
@@ -80,8 +81,8 @@ sub new {
 	my $rules = join '|', ( map {"($_)"} ( keys %token_table ) );
 	$rules = qr/$rules/x;
 
-	map { $_ =~ s/^\!\?// } ( values %token_table );
-	map { $_ =~ s/^\\// }   ( values %token_table );
+	s/^\!\?// for values %token_table;
+	s/^\\//   for values %token_table;
 
 	my $self = {
 		context          => $c,

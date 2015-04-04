@@ -1,5 +1,6 @@
 package Text::Trac::Node;
 use strict;
+use warnings;
 use base qw( Class::Accessor::Fast );
 
 our $VERSION = '0.16';

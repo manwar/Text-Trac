@@ -1,6 +1,7 @@
 package Text::Trac::Blockquote;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::BlockNode );
 
 our $VERSION = '0.16';
@@ -61,7 +62,7 @@ sub parse {
 		}
 
 		# parse inline nodes
-		my $inline_parsers = $self->_get_matched_parsers( 'inline', $l ) if $l;
+		my $inline_parsers = $l ? $self->_get_matched_parsers( 'inline', $l ) : undef;
 		for my $parser ( @{$inline_parsers} ) {
 			$l = $parser->parse($l);
 		}

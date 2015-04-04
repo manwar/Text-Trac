@@ -1,6 +1,7 @@
 package Text::Trac::LinkResolver::Milestone;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::LinkResolver );
 
 our $VERSION = '0.16';
@@ -17,7 +18,7 @@ sub format_link {
 	$label ||= $match;
 	my ( $from, $to ) = ( $match =~ m/(\d+):(\d+)/ );
 
-	my $url = $c->{trac_milestone_url} || $c->trac_url . "milestone/";
+	my $url = $c->{trac_milestone_url} || $c->trac_url . 'milestone/';
 	$url .= $target;
 
 	return sprintf '<a class="milestone" href="%s">%s</a>', $url, $label;

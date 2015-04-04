@@ -1,6 +1,7 @@
 package Text::Trac::Hr;
 
 use strict;
+use warnings;
 use base qw(Text::Trac::BlockNode);
 
 our $VERSION = '0.16';

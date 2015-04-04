@@ -1,4 +1,6 @@
 package t::TestTextTrac;
+use strict;
+use warnings;
 
 use Test::Base -Base;
 use Text::Trac;
@@ -12,6 +14,8 @@ sub run_tests {
 }
 
 package t::TestTextTrac::Filter;
+use strict;
+use warnings;
 use Test::Base::Filter -Base;
 
 my $p = Text::Trac->new( trac_url => 'http://trac.mizzy.org/public/' );

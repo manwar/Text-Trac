@@ -6,7 +6,7 @@ use Test::More tests => 2;
 
 sub not_in_file_ok {
 	my ( $filename, %regex ) = @_;
-	open my $fh, "<", $filename
+	open my $fh, '<', $filename
 		or die "couldn't open $filename for reading: $!";
 
 	my %violated;
@@ -28,7 +28,7 @@ sub not_in_file_ok {
 	}
 }
 
-not_in_file_ok( Changes => "placeholder date/time" => qr(Date/time) );
+not_in_file_ok( Changes => 'placeholder date/time' => qr(Date/time) );
 
 sub module_boilerplate_ok {
 	my ($module) = @_;

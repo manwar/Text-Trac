@@ -1,6 +1,7 @@
 package Text::Trac::LinkResolver::Ticket;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::LinkResolver );
 
 our $VERSION = '0.16';

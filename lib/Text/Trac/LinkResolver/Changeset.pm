@@ -1,6 +1,7 @@
 package Text::Trac::LinkResolver::Changeset;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::LinkResolver );
 
 our $VERSION = '0.16';
@@ -18,7 +19,7 @@ sub format_link {
 	$label ||= $match;
 	my ($rev) = ( $match =~ m/(\d+)/ );
 
-	my $url = $c->{trac_changeset_url} || $c->trac_url . "changeset/";
+	my $url = $c->{trac_changeset_url} || $c->trac_url . 'changeset/';
 	$url .= $rev;
 	return sprintf '<a class="changeset" href="%s">%s</a>', $url, $label;
 }

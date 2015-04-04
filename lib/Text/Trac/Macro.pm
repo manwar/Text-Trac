@@ -1,5 +1,7 @@
 package Text::Trac::Macro;
 use strict;
+use warnings;
+
 use base qw(Text::Trac::InlineNode Class::Accessor::Fast);
 use UNIVERSAL::require;
 use Text::ParseWords qw(quotewords);
@@ -19,8 +21,8 @@ sub parse {
 	my ( $self, $name, $args, $match ) = @_;
 	my $c = $self->{context};
 
-	my @args = quotewords( ',\s*', 0, $args ) if $args;
-	map {s/^\s+|\s+$//g} @args;
+	my @args = $args ? quotewords( ',\s*', 0, $args ) : ();
+	s/^\s+|\s+$//g for @args;
 
 	foreach my $class ( "Text::Trac::Macro::$name", $name ) {
 		if ( $class->require ) {

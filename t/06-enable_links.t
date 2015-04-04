@@ -1,6 +1,7 @@
 #!perl -T
 
 use strict;
+use warnings;
 use Test::Base;
 use Text::Trac;
 

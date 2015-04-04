@@ -1,6 +1,7 @@
 package Text::Trac::Ol;
 
 use strict;
+use warnings;
 use base qw(Text::Trac::BlockNode);
 
 our $VERSION = '0.16';
@@ -27,16 +28,16 @@ sub parse {
 		$start_tag = $type == 1 ? '<ol>' : qq{<ol start="$1">};
 	}
 	elsif ( $type eq 'a' ) {
-		$start_tag = qq{<ol class="loweralpha">};
+		$start_tag = q{<ol class="loweralpha">};
 	}
 	elsif ( $type eq 'A' ) {
-		$start_tag = qq{<ol class="upperalpha">};
+		$start_tag = q{<ol class="upperalpha">};
 	}
 	elsif ( $type eq 'i' ) {
-		$start_tag = qq{<ol class="lowerroman">};
+		$start_tag = q{<ol class="lowerroman">};
 	}
 	elsif ( $type eq 'I' ) {
-		$start_tag = qq{<ol class="upperroman">};
+		$start_tag = q{<ol class="upperroman">};
 	}
 
 	if ( $space > $c->ol->{space} ) {

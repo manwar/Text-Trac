@@ -1,6 +1,7 @@
 package Text::Trac;
 
 use strict;
+use warnings;
 
 use Text::Trac::Context;
 use Text::Trac::BlockNode;

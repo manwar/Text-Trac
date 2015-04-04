@@ -1,6 +1,7 @@
 package Text::Trac::LinkResolver::Report;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::LinkResolver );
 
 our $VERSION = '0.16';
@@ -18,7 +19,7 @@ sub format_link {
 	$label ||= $match;
 	my ($rev) = ( $match =~ m/(\d+)/ );
 
-	my $url = $c->{trac_report_url} || $c->trac_url . "report/";
+	my $url = $c->{trac_report_url} || $c->trac_url . 'report/';
 	$url .= $rev;
 	return sprintf '<a class="report" href="%s">%s</a>', $url, $label;
 }

@@ -1,4 +1,5 @@
 use strict;
+use warnings;
 use t::TestTextTrac;
 
 run_tests;

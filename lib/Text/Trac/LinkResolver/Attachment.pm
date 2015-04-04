@@ -1,6 +1,7 @@
 package Text::Trac::LinkResolver::Attachment;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::LinkResolver );
 
 our $VERSION = '0.16';
@@ -17,7 +18,7 @@ sub format_link {
 	$label ||= $match;
 
 	my ( $type, $name, $file ) = ( $match =~ m/attachment:([^:]+):([^:]+):([^:\]\s]+)/ );
-	my $url = $c->{trac_attachment_url} || $c->trac_url . "attachment/";
+	my $url = $c->{trac_attachment_url} || $c->trac_url . 'attachment/';
 	$url .= "$type/$name/$file";
 
 	return sprintf '<a class="attachment" href="%s">%s</a>', $url, $label;

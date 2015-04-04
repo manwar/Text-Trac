@@ -1,6 +1,7 @@
 package Text::Trac::LinkResolver::Wiki;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::LinkResolver );
 
 our $VERSION = '0.16';
@@ -24,7 +25,7 @@ sub format_link {
 		$label  = $2;
 	}
 
-	my $url = $c->{trac_wiki_url} || $c->trac_url . "wiki/";
+	my $url = $c->{trac_wiki_url} || $c->trac_url . 'wiki/';
 	$url .= $target;
 	return sprintf '<a class="wiki" href="%s">%s</a>', $url, $label;
 }

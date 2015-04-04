@@ -1,5 +1,6 @@
 package Text::Trac::P;
 use strict;
+use warnings;
 use base qw(Text::Trac::BlockNode);
 use Text::Trac::Text;
 

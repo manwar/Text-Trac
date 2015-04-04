@@ -1,6 +1,7 @@
 package Text::Trac::LinkResolver::Source;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::LinkResolver );
 
 our $VERSION = '0.16';
@@ -17,7 +18,7 @@ sub format_link {
 	$label ||= $match;
 	my ( $file, $rev ) = ( $target =~ m/([^#]+)(?:#(\d+))?/ );
 
-	my $url = $c->{trac_source_url} || $c->trac_url . "browser/";
+	my $url = $c->{trac_source_url} || $c->trac_url . 'browser/';
 	$url .= $file;
 	$url .= "?rev=$rev" if $rev;
 

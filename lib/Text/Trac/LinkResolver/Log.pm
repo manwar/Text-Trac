@@ -1,6 +1,7 @@
 package Text::Trac::LinkResolver::Log;
 
 use strict;
+use warnings;
 use base qw( Text::Trac::LinkResolver );
 
 our $VERSION = '0.16';
@@ -18,7 +19,7 @@ sub format_link {
 	$label ||= $match;
 	my ( $from, $to ) = ( $match =~ m/(\d+):(\d+)/ );
 
-	my $url = $c->{trac_log_url} || $c->trac_url . "log/";
+	my $url = $c->{trac_log_url} || $c->trac_url . 'log/';
 	return sprintf '<a class="source" href="%s?rev=%s&amp;stop_rev=%s">%s</a>', $url, $to, $from, $label;
 }
 
