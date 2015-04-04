@@ -1,3 +1,6 @@
+###Status
+[![Build Status](https://travis-ci.org/szabgab/Text-Trac.png)](https://travis-ci.org/szabgab/Text-Trac)
+
 Text-Trac
 
 INSTALLATION
@@ -16,19 +19,6 @@ After installing, you can find documentation for this module with the perldoc co
 
     perldoc Text::Trac
 
-You can also look for information at:
-
-    Search CPAN
-        http://search.cpan.org/dist/Text-Trac
-
-    CPAN Request Tracker:
-        http://rt.cpan.org/NoAuth/Bugs.html?Dist=Text-Trac
-
-    AnnoCPAN, annotated CPAN documentation:
-        http://annocpan.org/dist/Text-Trac
-
-    CPAN Ratings:
-        http://cpanratings.perl.org/d/Text-Trac
 
 COPYRIGHT AND LICENCE
 
