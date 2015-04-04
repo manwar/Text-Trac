@@ -1,5 +1,6 @@
 *.swp
 .tidyall.d/
+/inc/
 MANIFEST
 META.*
 MYMETA.*
