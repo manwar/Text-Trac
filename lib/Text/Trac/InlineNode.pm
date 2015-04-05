@@ -8,7 +8,7 @@ use UNIVERSAL::require;
 use Text::Trac::LinkResolver;
 use HTML::Entities qw();
 
-our $VERSION = '0.16';
+our $VERSION = '0.17';
 
 tie my %token_table, 'Tie::IxHash';
 
