@@ -16,8 +16,19 @@ subtest usage => sub {
 	#diag $out;
 };
 
-my @cases = qw(padre_download_debian padre_download_fedora padre_download_mandriva padre_download_opensuse);
+my @cases = qw(
+	padre_download_debian
+	padre_download_fedora
+	padre_download_mandriva
+	padre_download_opensuse
+	padre_download_ubuntu
+	padre_download_freebsd
+	padre_download_netbsd
+	padre_development
+	padre_features
+);
 
+# Ubuntu generates warnings
 subtest full_html => sub {
 	plan tests => 2 * @cases;
 	foreach my $case (@cases) {
