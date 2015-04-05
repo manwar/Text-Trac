@@ -21,7 +21,6 @@ no_index( package => 'TestMacro' );
 
 install_script 'script/trac2html';
 
-auto_include;
 auto_install;
 
 repository 'https://github.com/szabgab/Text-Trac';
