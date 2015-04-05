@@ -21,7 +21,7 @@ sub format_link {
 	my $url = $c->{trac_attachment_url} || $c->trac_url . 'attachment/';
 	$url .= "$type/$name/$file";
 
-	return sprintf '<a class="attachment" href="%s">%s</a>', $url, $label;
+	return sprintf '<a %s href="%s">%s</a>', ( $c->{class} ? q{class="attachment"} : '' ), $url, $label;
 }
 
 1;

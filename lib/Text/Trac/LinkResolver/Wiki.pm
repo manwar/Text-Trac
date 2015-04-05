@@ -27,7 +27,7 @@ sub format_link {
 
 	my $url = $c->{trac_wiki_url} || $c->trac_url . 'wiki/';
 	$url .= $target;
-	return sprintf '<a class="wiki" href="%s">%s</a>', $url, $label;
+	return sprintf '<a %s href="%s">%s</a>', ( $c->{class} ? q{class="wiki"} : '' ), $url, $label;
 }
 
 1;

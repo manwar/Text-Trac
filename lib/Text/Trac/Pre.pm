@@ -18,9 +18,10 @@ sub parse {
 	my $pattern = $self->pattern;
 	$l =~ /$pattern/ or return $l;
 	my $match = $1;
+	my $class = $c->{class} ? q{class="wiki"} : '';
 
 	if ( $l =~ /^\{\{\{$/ ) {
-		$c->htmllines('<pre class="wiki">');
+		$c->htmllines(qq{<pre $class>});
 	}
 
 	while ( $c->hasnext ) {

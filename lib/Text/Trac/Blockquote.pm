@@ -24,10 +24,11 @@ sub parse {
 		for ( @{ $c->in_block_of } ) {
 			$blockquote_depth++ if $_ eq 'blockquote';
 		}
+		my $class = $c->{class} ? q{class="citation"} : '';
 
 		if ( $depth > $blockquote_depth ) {
 			for ( 1 .. $depth ) {
-				$c->htmllines('<blockquote class="citation">');
+				$c->htmllines(qq{<blockquote $class>});
 				push @{ $c->in_block_of }, 'blockquote';
 			}
 		}

@@ -21,7 +21,7 @@ sub format_link {
 	my $url = $c->{trac_milestone_url} || $c->trac_url . 'milestone/';
 	$url .= $target;
 
-	return sprintf '<a class="milestone" href="%s">%s</a>', $url, $label;
+	return sprintf '<a %s href="%s">%s</a>', ( $c->{class} ? q{class="milestone"} : '' ), $url, $label;
 }
 
 1;

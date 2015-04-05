@@ -22,7 +22,7 @@ sub format_link {
 	my $url = $c->{trac_ticket_url} || $c->trac_url . 'ticket/';
 	$url .= $rev;
 	$url .= "#comment:$commentId";
-	return sprintf '<a class="ticket" href="%s">%s</a>', $url, $label;
+	return sprintf '<a %s href="%s">%s</a>', ( $c->{class} ? q{class="ticket"} : '' ), $url, $label;
 }
 
 1;

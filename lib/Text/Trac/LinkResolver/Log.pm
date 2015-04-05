@@ -20,7 +20,8 @@ sub format_link {
 	my ( $from, $to ) = ( $match =~ m/(\d+):(\d+)/ );
 
 	my $url = $c->{trac_log_url} || $c->trac_url . 'log/';
-	return sprintf '<a class="source" href="%s?rev=%s&amp;stop_rev=%s">%s</a>', $url, $to, $from, $label;
+	return sprintf '<a %s href="%s?rev=%s&amp;stop_rev=%s">%s</a>', ( $c->{class} ? q{class="source"} : '' ), $url,
+		$to, $from, $label;
 }
 
 1;

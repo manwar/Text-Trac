@@ -22,7 +22,7 @@ sub format_link {
 	$url .= $file;
 	$url .= "?rev=$rev" if $rev;
 
-	return sprintf '<a class="source" href="%s">%s</a>', $url, $label;
+	return sprintf '<a %s href="%s">%s</a>', ( $c->{class} ? q{class="source"} : '' ), $url, $label;
 }
 
 1;

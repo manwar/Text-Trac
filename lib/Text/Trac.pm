@@ -12,6 +12,7 @@ my %Defaults = (
 	html              => '',
 	permalink         => '',
 	min_heading_level => 1,
+	class             => 1,
 );
 
 sub new {

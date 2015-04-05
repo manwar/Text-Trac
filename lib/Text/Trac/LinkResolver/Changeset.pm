@@ -21,7 +21,7 @@ sub format_link {
 
 	my $url = $c->{trac_changeset_url} || $c->trac_url . 'changeset/';
 	$url .= $rev;
-	return sprintf '<a class="changeset" href="%s">%s</a>', $url, $label;
+	return sprintf '<a %s href="%s">%s</a>', ( $c->{class} ? q{class="changeset"} : '' ), $url, $label;
 }
 
 1;

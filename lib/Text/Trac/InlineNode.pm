@@ -201,7 +201,8 @@ sub _italic_formatter {
 
 sub _underline_formatter {
 	my ( $self, $match, $pre_match, $post_match ) = @_;
-	return $self->_simple_tag_handler( '<span class="underline">', '</span>' );
+	my $class_underline = $self->{context}->{class} ? q{class="underline"} : '';
+	return $self->_simple_tag_handler( qq{<span $class_underline>}, '</span>' );
 }
 
 sub _strike_formatter {
@@ -294,8 +295,10 @@ sub _make_ext_link {
 	$title ||= $text;
 
 	my $local = $self->{context}->{local} || '';
+	my $class_link = $self->{context}->{class} ? q{class="ext-link"} : '';
+	my $class_icon = $self->{context}->{class} ? q{class="icon"}     : '';
 	if ( $url !~ /^$local/ or !$local ) {
-		return qq{<a class="ext-link" href="$url"$title_attr><span class="icon"></span>$text</a>};
+		return qq{<a $class_link href="$url"$title_attr><span $class_icon></span>$text</a>};
 	}
 }
 

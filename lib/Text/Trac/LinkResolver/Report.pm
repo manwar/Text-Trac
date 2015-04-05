@@ -21,7 +21,7 @@ sub format_link {
 
 	my $url = $c->{trac_report_url} || $c->trac_url . 'report/';
 	$url .= $rev;
-	return sprintf '<a class="report" href="%s">%s</a>', $url, $label;
+	return sprintf '<a %s href="%s">%s</a>', ( $c->{class} ? q{class="report"} : '' ), $url, $label;
 }
 
 1;

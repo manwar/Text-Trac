@@ -1,6 +1,8 @@
 Revision history for Text-Trac
 
+    Add lots of full html tests.
     Add command line script script/trac2html
+    Enable excluding class="" from the HTML
     run Perl::Tidy
     run Perl::Critic
     Escape { in regex RT #100712
