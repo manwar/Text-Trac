@@ -3,7 +3,7 @@ package Text::Trac::Macro::HelloWorld;
 use strict;
 use warnings;
 
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 sub process {
 	my ( $class, $c, @args ) = @_;

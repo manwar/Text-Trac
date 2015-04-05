@@ -4,7 +4,7 @@ use warnings;
 use base qw(Text::Trac::BlockNode);
 use Text::Trac::Text;
 
-our $VERSION = '0.17';
+our $VERSION = '0.18';
 
 sub parse {
 	my ( $self, $l ) = @_;

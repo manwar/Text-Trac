@@ -1,5 +1,8 @@
 Revision history for Text-Trac
 
+0.18 2015.04.05
+    Remove auto_include from Makefile.PL to limit inc/ to the Module::Install code.
+
 0.17 2015.04.05
     Add lots of full html tests.
     Add command line script script/trac2html
