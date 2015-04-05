@@ -16,7 +16,7 @@ subtest usage => sub {
 	#diag $out;
 };
 
-my @cases = qw(padre_download_debian padre_download_fedora padre_download_mandriva);
+my @cases = qw(padre_download_debian padre_download_fedora padre_download_mandriva padre_download_opensuse);
 
 subtest full_html => sub {
 	plan tests => 2*@cases;
