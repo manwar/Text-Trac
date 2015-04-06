@@ -9,6 +9,7 @@ use Path::Tiny qw(path);
 my ($infile, $outfile);
 my $url = '';
 my $class;
+my $span;
 my $id;
 my $force;
 
@@ -17,6 +18,7 @@ GetOptions(
 	'outfile=s' => \$outfile,
 	'url=s'     => \$url,
 	'class'     => \$class,
+	'span'      => \$span,
 	'id'        => \$id,
 	'force'     => \$force,
 ) or usage();
@@ -32,6 +34,7 @@ sub main {
 	my $parser = Text::Trac->new(
 		trac_url      => $url,
 		class         => $class,
+		span          => $span,
 		id            => $id,
 	#	disable_links => [ qw( changeset ticket ) ],
 	);
@@ -48,6 +51,7 @@ Usage: $0
 
     --url http://...      ()
     --class               Include class="" in the HTML tags.
+	--span                Include <span></span>
     --id                  Include id="" in the HTML tags.
     --force               Overwrite exisiting html file.
 END_USAGE
