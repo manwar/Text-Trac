@@ -16,16 +16,19 @@ subtest usage => sub {
 	#diag $out;
 };
 
-#	padre_download_debian
-#	padre_download_fedora
-#	padre_download_opensuse
-#	padre_download_ubuntu
-#	padre_download_netbsd
-#	padre_development
 my @cases = qw(
+	padre_download_debian
+	padre_download_fedora
+	padre_download_opensuse
+	padre_download_ubuntu
+	padre_download_netbsd
+	padre_development
 	padre_download_mandriva
 	padre_download_freebsd
 	padre_features
+	padre_download_osx
+	padre_download_windows
+	padre_download_activeperl
 );
 
 # Ubuntu generates warnings
