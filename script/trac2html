@@ -8,13 +8,13 @@ use Path::Tiny qw(path);
 
 my ($infile, $outfile);
 my $url = '';
-my $class = 1;
+my $class;
 
 GetOptions(
 	'infile=s'  => \$infile,
 	'outfile=s' => \$outfile,
 	'url=s'     => \$url,
-	'class!'    => \$class,
+	'class'     => \$class,
 ) or usage();
 usage() if not $infile or not $outfile;
 die "Infile '$infile' does not exist.\n" if not -e $infile;
@@ -42,7 +42,7 @@ Usage: $0
     --outfile filename    (The html file to generate)
 
     --url http://...      ()
-    --noclass             Don't include class="" in the HTML tags.
+    --class               Include class="" in the HTML tags.
 END_USAGE
 	exit;
 }

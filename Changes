@@ -1,5 +1,8 @@
 Revision history for Text-Trac
 
+
+    Default of script/trac2html is to exclude class=""
+
 0.18 2015.04.05
     Remove auto_include from Makefile.PL to limit inc/ to the Module::Install code.
 
