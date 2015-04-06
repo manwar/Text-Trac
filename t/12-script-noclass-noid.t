@@ -16,15 +16,15 @@ subtest usage => sub {
 	#diag $out;
 };
 
+#	padre_download_debian
+#	padre_download_fedora
+#	padre_download_mandriva
+#	padre_download_opensuse
+#	padre_download_ubuntu
+#	padre_download_freebsd
+#	padre_download_netbsd
+#	padre_development
 my @cases = qw(
-	padre_download_debian
-	padre_download_fedora
-	padre_download_mandriva
-	padre_download_opensuse
-	padre_download_ubuntu
-	padre_download_freebsd
-	padre_download_netbsd
-	padre_development
 	padre_features
 );
 
@@ -32,10 +32,10 @@ my @cases = qw(
 subtest full_html => sub {
 	plan tests => 2 * @cases;
 	foreach my $case (@cases) {
-		my $out = qx{$^X script/trac2html --infile t/corpus/$case.trac --outfile $dir/$case.html --id};
+		my $out = qx{$^X script/trac2html --infile t/corpus/$case.trac --outfile $dir/$case.html};
 		is $out, '', 'out';
 		my $html_generated = path("$dir/$case.html")->slurp_utf8;
-		my $html_expected  = path("t/expected/${case}_noclass.html")->slurp_utf8;
+		my $html_expected  = path("t/expected/${case}_noclass_noid.html")->slurp_utf8;
 
 		#eq_or_diff $html_generated, $html_expected, 'Mandriva';
 		is $html_generated, $html_expected, $case;
