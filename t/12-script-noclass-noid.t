@@ -21,10 +21,10 @@ subtest usage => sub {
 #	padre_download_mandriva
 #	padre_download_opensuse
 #	padre_download_ubuntu
-#	padre_download_freebsd
 #	padre_download_netbsd
 #	padre_development
 my @cases = qw(
+	padre_download_freebsd
 	padre_features
 );
 

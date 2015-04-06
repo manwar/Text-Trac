@@ -18,8 +18,8 @@ sub parse {
 	my $level = length($1) + $c->min_heading_level - 1;
 
 	my $id = $self->_strip($2);
-	my $attr = $c->{id} ? qq{id="$id"} : '';
-	$l = qq(<h$level $attr>) . $self->replace($2) . qq(</h$level>);
+	my $attr = $c->{id} ? qq{ id="$id"} : '';
+	$l = qq(<h$level$attr>) . $self->replace($2) . qq(</h$level>);
 
 	$c->htmllines($l);
 }
