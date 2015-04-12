@@ -36,6 +36,8 @@ my @cases = qw(
 	padre_faq
 	padre_wxformbuilder
 	padre_wxwidgets
+	padre_translationstyle
+	padre_wikistart
 
 );
 
