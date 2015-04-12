@@ -29,6 +29,9 @@ my @cases = qw(
 	padre_download_osx
 	padre_download_windows
 	padre_download_activeperl
+
+	padre_download_cpan
+	padre_download_perlbrew
 );
 
 # Ubuntu generates warnings
