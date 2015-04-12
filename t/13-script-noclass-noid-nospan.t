@@ -32,6 +32,11 @@ my @cases = qw(
 
 	padre_download_cpan
 	padre_download_perlbrew
+	padre_download_repository
+	padre_faq
+	padre_wxformbuilder
+	padre_wxwidgets
+
 );
 
 # Ubuntu generates warnings
