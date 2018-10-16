@@ -152,9 +152,9 @@ Return converted html string.
 
 =item  L<Text::Hatena>
 
-=item  Trac L<http://www.edgewall.com/trac/>
+=item  L<Trac Guide|https://trac.edgewall.org/wiki/TracGuide>
 
-=item  Trac WikiFormatting L<http://projects.edgewall.com/trac/wiki/WikiFormatting>
+=item  L<Trac WikiFormatting|https://trac.edgewall.org/wiki/WikiFormatting>
 
 =back
 
