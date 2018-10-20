@@ -6,7 +6,7 @@ use warnings;
 use Text::Trac::Context;
 use Text::Trac::BlockNode;
 
-our $VERSION = '0.18';
+our $VERSION = '0.19';
 
 my %Defaults = (
 	html              => '',
