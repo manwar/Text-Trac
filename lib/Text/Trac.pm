@@ -7,7 +7,7 @@ use 5.006;
 use Text::Trac::Context;
 use Text::Trac::BlockNode;
 
-our $VERSION = '0.21';
+our $VERSION = '0.22';
 
 my %Defaults = (
 	html              => '',

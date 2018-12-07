@@ -1,5 +1,8 @@
 Revision history for Text::Trac
 
+0.22  2018.12.07 MANWAR
+      - Moved author unit tests to subfolder xt/.
+
 0.21  2018.12.06 MANWAR
       Fixed warning 'Use of uninitialized value $target ..' as reported by CPANTESTERS.
         https://www.cpantesters.org/cpan/report/f8fc5086-f8e1-11e8-b905-8feee4406f56

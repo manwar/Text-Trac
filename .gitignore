@@ -1,9 +1,7 @@
 *.swp
 .tidyall.d/
 /inc/
-MANIFEST
 MANIFEST.bak
-META.*
 MYMETA.*
 Makefile
 Text-Trac-*
