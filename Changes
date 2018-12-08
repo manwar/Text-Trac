@@ -1,5 +1,8 @@
 Revision history for Text::Trac
 
+0.23  2018.12.08 MANWAR
+      - Now using ExtUtils::MakeMaker for packaging.
+
 0.22  2018.12.07 MANWAR
       - Moved author unit tests to subfolder xt/.
 
